@@ -1,0 +1,26 @@
+[package]
+name = "url-lite"
+version = "0.1.0"
+edition = "2021"
+authors = ["Johan Holmerin <johan@holmer.in>"]
+description = "no_std URL parser"
+documentation = "https://github.com/johanholmerin/url-lite"
+homepage = "https://github.com/johanholmerin/url-lite"
+repository = "https://github.com/johanholmerin/url-lite"
+keywords = ["url", "parser"]
+categories = ["parser-implementations", "no-std"]
+license = "MIT"
+
+[dev-dependencies]
+alloc_counter = "0.0.4"
+
+[dependencies]
+no-panic = "0.1.19"
+
+[features]
+# Provide core::error::Error implementation
+# Requires nightly and the `error_in_core` feature gate
+unstable = []
+
+# Internal, used for testing absence of panics
+_nopanic = []
