@@ -1149,4 +1149,11 @@ mod tests {
         let error = Url::parse("#").unwrap_err();
         assert_eq!(error, ParseError::Invalid);
     }
+
+    #[test]
+    #[no_alloc(forbid)]
+    fn test_invalid_userinfo_char() {
+        let error = Url::parse("http://a}b@hostname").unwrap_err();
+        assert_eq!(error, ParseError::Invalid);
+    }
 }
